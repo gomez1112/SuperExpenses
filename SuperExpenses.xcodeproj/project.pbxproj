@@ -11,6 +11,15 @@
 		CCCB48352AFFB14E008FF86B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48342AFFB14E008FF86B /* ContentView.swift */; };
 		CCCB48372AFFB150008FF86B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCCB48362AFFB150008FF86B /* Assets.xcassets */; };
 		CCCB483B2AFFB150008FF86B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCCB483A2AFFB150008FF86B /* Preview Assets.xcassets */; };
+		CCCB48452AFFB1BF008FF86B /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48442AFFB1BF008FF86B /* Transaction.swift */; };
+		CCCB48472AFFB2A8008FF86B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48462AFFB2A8008FF86B /* Category.swift */; };
+		CCCB48492AFFB354008FF86B /* CodableColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48482AFFB354008FF86B /* CodableColor.swift */; };
+		CCCB484B2AFFB376008FF86B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB484A2AFFB376008FF86B /* Color+Extension.swift */; };
+		CCCB484D2AFFB37E008FF86B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB484C2AFFB37E008FF86B /* UIColor+Extension.swift */; };
+		CCCB484F2AFFB557008FF86B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB484E2AFFB557008FF86B /* User.swift */; };
+		CCCB48512AFFBB55008FF86B /* Transaction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48502AFFBB55008FF86B /* Transaction+Extension.swift */; };
+		CCCB48532AFFBCAB008FF86B /* Category+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48522AFFBCAB008FF86B /* Category+Extension.swift */; };
+		CCCB48552AFFBFEF008FF86B /* PreviewModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48542AFFBFEF008FF86B /* PreviewModelContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +29,15 @@
 		CCCB48362AFFB150008FF86B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCCB48382AFFB150008FF86B /* SuperExpenses.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuperExpenses.entitlements; sourceTree = "<group>"; };
 		CCCB483A2AFFB150008FF86B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CCCB48442AFFB1BF008FF86B /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		CCCB48462AFFB2A8008FF86B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CCCB48482AFFB354008FF86B /* CodableColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableColor.swift; sourceTree = "<group>"; };
+		CCCB484A2AFFB376008FF86B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		CCCB484C2AFFB37E008FF86B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		CCCB484E2AFFB557008FF86B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CCCB48502AFFBB55008FF86B /* Transaction+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+Extension.swift"; sourceTree = "<group>"; };
+		CCCB48522AFFBCAB008FF86B /* Category+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Extension.swift"; sourceTree = "<group>"; };
+		CCCB48542AFFBFEF008FF86B /* PreviewModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewModelContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +71,9 @@
 			isa = PBXGroup;
 			children = (
 				CCCB48322AFFB14E008FF86B /* SuperExpensesApp.swift */,
+				CCCB48432AFFB1A2008FF86B /* Extension */,
+				CCCB48422AFFB19E008FF86B /* Model */,
+				CCCB48412AFFB19A008FF86B /* View */,
 				CCCB48342AFFB14E008FF86B /* ContentView.swift */,
 				CCCB48362AFFB150008FF86B /* Assets.xcassets */,
 				CCCB48382AFFB150008FF86B /* SuperExpenses.entitlements */,
@@ -67,6 +88,36 @@
 				CCCB483A2AFFB150008FF86B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CCCB48412AFFB19A008FF86B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CCCB48422AFFB19E008FF86B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CCCB48442AFFB1BF008FF86B /* Transaction.swift */,
+				CCCB484E2AFFB557008FF86B /* User.swift */,
+				CCCB48542AFFBFEF008FF86B /* PreviewModelContainer.swift */,
+				CCCB48462AFFB2A8008FF86B /* Category.swift */,
+				CCCB48482AFFB354008FF86B /* CodableColor.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CCCB48432AFFB1A2008FF86B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CCCB484A2AFFB376008FF86B /* Color+Extension.swift */,
+				CCCB484C2AFFB37E008FF86B /* UIColor+Extension.swift */,
+				CCCB48502AFFBB55008FF86B /* Transaction+Extension.swift */,
+				CCCB48522AFFBCAB008FF86B /* Category+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +190,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCCB484D2AFFB37E008FF86B /* UIColor+Extension.swift in Sources */,
+				CCCB484F2AFFB557008FF86B /* User.swift in Sources */,
+				CCCB48492AFFB354008FF86B /* CodableColor.swift in Sources */,
+				CCCB48532AFFBCAB008FF86B /* Category+Extension.swift in Sources */,
+				CCCB484B2AFFB376008FF86B /* Color+Extension.swift in Sources */,
+				CCCB48552AFFBFEF008FF86B /* PreviewModelContainer.swift in Sources */,
+				CCCB48512AFFBB55008FF86B /* Transaction+Extension.swift in Sources */,
 				CCCB48352AFFB14E008FF86B /* ContentView.swift in Sources */,
 				CCCB48332AFFB14E008FF86B /* SuperExpensesApp.swift in Sources */,
+				CCCB48452AFFB1BF008FF86B /* Transaction.swift in Sources */,
+				CCCB48472AFFB2A8008FF86B /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
