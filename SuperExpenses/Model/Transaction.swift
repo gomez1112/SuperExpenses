@@ -19,12 +19,13 @@ final class Transaction {
     var date: Date = Date()
     var detail: String?
     
-    init(name: String, amount: Double, kind: Kind, classification: Classification, category: Category? = nil, detail: String? = nil) {
+    init(name: String, amount: Double, kind: Kind, classification: Classification, category: Category? = nil, date: Date = Date(), detail: String? = nil) {
         self.name = name
         self.amount = amount
         self.kind = kind
         self.classification = classification
         self.category = category
+        self.date = date
         self.detail = detail
     }
     enum Kind: String, Identifiable, Codable, CaseIterable {

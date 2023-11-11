@@ -16,6 +16,9 @@ struct TransactionView: View {
                 .font(.headline)
                 .foregroundStyle(transaction.kind == .income ? .green : .red)
             VStack(alignment: .leading) {
+                Text(transaction.date, style: .date)
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
                 Text(transaction.name)
                     .font(.headline)
                     .lineLimit(1)
@@ -24,12 +27,13 @@ struct TransactionView: View {
                     .foregroundStyle(.secondary)
             }
             Spacer()
+            
             Text(transaction.amount.formatted(.localCurrency))
                 .font(.body)
                 .foregroundStyle(transaction.kind == .income ? .green : .red)
+            
         }
         .padding(.vertical, 8)
-        .navigationTitle("Transactions")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
