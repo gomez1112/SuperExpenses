@@ -5,4 +5,41 @@
 //  Created by Gerard Gomez on 11/11/23.
 //
 
-import Foundation
+import SwiftUI
+
+enum AppScreen: Identifiable, Hashable, CaseIterable {
+    var id: Self { self }
+    case home
+    case transactions
+    case statistics
+    case profile
+    
+    @ViewBuilder
+    var label: some View {
+        switch self {
+            case .home:
+                Label("Home", systemImage: "house.circle")
+            case .transactions:
+                Label("Transactions", systemImage: "creditcard.circle")
+            case .statistics:
+                Label("Statistics", systemImage: "chart.pie")
+            case .profile:
+                Label("Profile", systemImage: "person.crop.circle")
+        }
+    }
+    
+    @ViewBuilder
+    func destination() -> some View {
+        switch self {
+            case .home:
+                Home()
+            case .transactions:
+                TransactionsView()
+            case .statistics:
+                Statistics()
+            case .profile:
+                Profile()
+        }
+    }
+}
+

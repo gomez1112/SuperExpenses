@@ -16,10 +16,22 @@
 		CCCB48492AFFB354008FF86B /* CodableColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48482AFFB354008FF86B /* CodableColor.swift */; };
 		CCCB484B2AFFB376008FF86B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB484A2AFFB376008FF86B /* Color+Extension.swift */; };
 		CCCB484D2AFFB37E008FF86B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB484C2AFFB37E008FF86B /* UIColor+Extension.swift */; };
-		CCCB484F2AFFB557008FF86B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB484E2AFFB557008FF86B /* User.swift */; };
 		CCCB48512AFFBB55008FF86B /* Transaction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48502AFFBB55008FF86B /* Transaction+Extension.swift */; };
 		CCCB48532AFFBCAB008FF86B /* Category+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48522AFFBCAB008FF86B /* Category+Extension.swift */; };
-		CCCB48552AFFBFEF008FF86B /* PreviewModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48542AFFBFEF008FF86B /* PreviewModelContainer.swift */; };
+		CCCB48552AFFBFEF008FF86B /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48542AFFBFEF008FF86B /* PreviewSampleData.swift */; };
+		CCCB48572AFFC37B008FF86B /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48562AFFC37B008FF86B /* AppScreen.swift */; };
+		CCCB48592AFFC669008FF86B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48582AFFC669008FF86B /* Home.swift */; };
+		CCCB485B2AFFC678008FF86B /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB485A2AFFC678008FF86B /* TransactionsView.swift */; };
+		CCCB485D2AFFC687008FF86B /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB485C2AFFC687008FF86B /* Statistics.swift */; };
+		CCCB485F2AFFC690008FF86B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB485E2AFFC690008FF86B /* Profile.swift */; };
+		CCCB48612AFFC6EE008FF86B /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48602AFFC6EE008FF86B /* TransactionView.swift */; };
+		CCCB48632AFFCCAE008FF86B /* FormatStyle + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48622AFFCCAE008FF86B /* FormatStyle + Extension.swift */; };
+		CCCB48652AFFD681008FF86B /* PrefersTabNavigationEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48642AFFD681008FF86B /* PrefersTabNavigationEnvironmentKey.swift */; };
+		CCCB48672AFFD6EB008FF86B /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48662AFFD6EB008FF86B /* AppTabView.swift */; };
+		CCCB48692AFFD7C9008FF86B /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48682AFFD7C9008FF86B /* TransactionDetailView.swift */; };
+		CCCB486B2AFFD803008FF86B /* AppSidebarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB486A2AFFD803008FF86B /* AppSidebarList.swift */; };
+		CCCB486D2AFFD872008FF86B /* AppContentColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB486C2AFFD872008FF86B /* AppContentColumn.swift */; };
+		CCCB486F2AFFD8EA008FF86B /* AppDetailColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB486E2AFFD8EA008FF86B /* AppDetailColumn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +46,22 @@
 		CCCB48482AFFB354008FF86B /* CodableColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableColor.swift; sourceTree = "<group>"; };
 		CCCB484A2AFFB376008FF86B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		CCCB484C2AFFB37E008FF86B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		CCCB484E2AFFB557008FF86B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CCCB48502AFFBB55008FF86B /* Transaction+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+Extension.swift"; sourceTree = "<group>"; };
 		CCCB48522AFFBCAB008FF86B /* Category+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Extension.swift"; sourceTree = "<group>"; };
-		CCCB48542AFFBFEF008FF86B /* PreviewModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewModelContainer.swift; sourceTree = "<group>"; };
+		CCCB48542AFFBFEF008FF86B /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
+		CCCB48562AFFC37B008FF86B /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
+		CCCB48582AFFC669008FF86B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		CCCB485A2AFFC678008FF86B /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
+		CCCB485C2AFFC687008FF86B /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		CCCB485E2AFFC690008FF86B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		CCCB48602AFFC6EE008FF86B /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		CCCB48622AFFCCAE008FF86B /* FormatStyle + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormatStyle + Extension.swift"; sourceTree = "<group>"; };
+		CCCB48642AFFD681008FF86B /* PrefersTabNavigationEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefersTabNavigationEnvironmentKey.swift; sourceTree = "<group>"; };
+		CCCB48662AFFD6EB008FF86B /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		CCCB48682AFFD7C9008FF86B /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
+		CCCB486A2AFFD803008FF86B /* AppSidebarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSidebarList.swift; sourceTree = "<group>"; };
+		CCCB486C2AFFD872008FF86B /* AppContentColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentColumn.swift; sourceTree = "<group>"; };
+		CCCB486E2AFFD8EA008FF86B /* AppDetailColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailColumn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +98,6 @@
 				CCCB48432AFFB1A2008FF86B /* Extension */,
 				CCCB48422AFFB19E008FF86B /* Model */,
 				CCCB48412AFFB19A008FF86B /* View */,
-				CCCB48342AFFB14E008FF86B /* ContentView.swift */,
 				CCCB48362AFFB150008FF86B /* Assets.xcassets */,
 				CCCB48382AFFB150008FF86B /* SuperExpenses.entitlements */,
 				CCCB48392AFFB150008FF86B /* Preview Content */,
@@ -93,6 +116,17 @@
 		CCCB48412AFFB19A008FF86B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CCCB48342AFFB14E008FF86B /* ContentView.swift */,
+				CCCB48582AFFC669008FF86B /* Home.swift */,
+				CCCB486A2AFFD803008FF86B /* AppSidebarList.swift */,
+				CCCB486C2AFFD872008FF86B /* AppContentColumn.swift */,
+				CCCB486E2AFFD8EA008FF86B /* AppDetailColumn.swift */,
+				CCCB48682AFFD7C9008FF86B /* TransactionDetailView.swift */,
+				CCCB48662AFFD6EB008FF86B /* AppTabView.swift */,
+				CCCB485A2AFFC678008FF86B /* TransactionsView.swift */,
+				CCCB48602AFFC6EE008FF86B /* TransactionView.swift */,
+				CCCB485C2AFFC687008FF86B /* Statistics.swift */,
+				CCCB485E2AFFC690008FF86B /* Profile.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -101,10 +135,11 @@
 			isa = PBXGroup;
 			children = (
 				CCCB48442AFFB1BF008FF86B /* Transaction.swift */,
-				CCCB484E2AFFB557008FF86B /* User.swift */,
-				CCCB48542AFFBFEF008FF86B /* PreviewModelContainer.swift */,
+				CCCB48562AFFC37B008FF86B /* AppScreen.swift */,
+				CCCB48542AFFBFEF008FF86B /* PreviewSampleData.swift */,
 				CCCB48462AFFB2A8008FF86B /* Category.swift */,
 				CCCB48482AFFB354008FF86B /* CodableColor.swift */,
+				CCCB48642AFFD681008FF86B /* PrefersTabNavigationEnvironmentKey.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -113,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				CCCB484A2AFFB376008FF86B /* Color+Extension.swift */,
+				CCCB48622AFFCCAE008FF86B /* FormatStyle + Extension.swift */,
 				CCCB484C2AFFB37E008FF86B /* UIColor+Extension.swift */,
 				CCCB48502AFFBB55008FF86B /* Transaction+Extension.swift */,
 				CCCB48522AFFBCAB008FF86B /* Category+Extension.swift */,
@@ -191,16 +227,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCCB484D2AFFB37E008FF86B /* UIColor+Extension.swift in Sources */,
-				CCCB484F2AFFB557008FF86B /* User.swift in Sources */,
+				CCCB486B2AFFD803008FF86B /* AppSidebarList.swift in Sources */,
 				CCCB48492AFFB354008FF86B /* CodableColor.swift in Sources */,
 				CCCB48532AFFBCAB008FF86B /* Category+Extension.swift in Sources */,
 				CCCB484B2AFFB376008FF86B /* Color+Extension.swift in Sources */,
-				CCCB48552AFFBFEF008FF86B /* PreviewModelContainer.swift in Sources */,
+				CCCB48552AFFBFEF008FF86B /* PreviewSampleData.swift in Sources */,
+				CCCB48592AFFC669008FF86B /* Home.swift in Sources */,
+				CCCB48692AFFD7C9008FF86B /* TransactionDetailView.swift in Sources */,
 				CCCB48512AFFBB55008FF86B /* Transaction+Extension.swift in Sources */,
+				CCCB486D2AFFD872008FF86B /* AppContentColumn.swift in Sources */,
 				CCCB48352AFFB14E008FF86B /* ContentView.swift in Sources */,
+				CCCB485F2AFFC690008FF86B /* Profile.swift in Sources */,
 				CCCB48332AFFB14E008FF86B /* SuperExpensesApp.swift in Sources */,
+				CCCB486F2AFFD8EA008FF86B /* AppDetailColumn.swift in Sources */,
 				CCCB48452AFFB1BF008FF86B /* Transaction.swift in Sources */,
 				CCCB48472AFFB2A8008FF86B /* Category.swift in Sources */,
+				CCCB48612AFFC6EE008FF86B /* TransactionView.swift in Sources */,
+				CCCB48632AFFCCAE008FF86B /* FormatStyle + Extension.swift in Sources */,
+				CCCB48572AFFC37B008FF86B /* AppScreen.swift in Sources */,
+				CCCB485D2AFFC687008FF86B /* Statistics.swift in Sources */,
+				CCCB485B2AFFC678008FF86B /* TransactionsView.swift in Sources */,
+				CCCB48672AFFD6EB008FF86B /* AppTabView.swift in Sources */,
+				CCCB48652AFFD681008FF86B /* PrefersTabNavigationEnvironmentKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

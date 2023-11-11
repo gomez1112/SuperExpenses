@@ -8,12 +8,16 @@
 import Foundation
 
 extension Transaction {
-    static let sandwich = Transaction(amount: 12.50, kind: .expense, classification: .personal,user: User(name: "Gerard", email: "gerardgomez11@me.com", notificationEnabled: false))
-    static let gas = Transaction(amount: 52.20, kind: .expense, classification: .business, user: User(name: "Gerard", email: "gerardgomez11@me.com", notificationEnabled: false))
-    static let paycheck = Transaction(amount: 2000.50, kind: .income, classification: .personal, user: User(name: "Gerard", email: "gerardgomez11@me.com", notificationEnabled: false))
-    static let rent = Transaction(amount: 1950.50, kind: .expense, classification: .personal, user: User(name: "Gerard", email: "gerardgomez11@me.com", notificationEnabled: false))
-    static let overtime = Transaction(amount: 800, kind: .income, classification: .personal, user: User(name: "Gerard", email: "gerardgomez11@me.com", notificationEnabled: false))
-    static let books = Transaction(amount: 120.50, kind: .expense, classification: .business, user: User(name: "Gerard", email: "gerardgomez11@me.com", notificationEnabled: false))
-    static let computer = Transaction(amount: 1223.50, kind: .expense, classification: .business, user: User(name: "Gerard", email: "gerardgomez11@me.com", notificationEnabled: false))
-    static let movie = Transaction(amount: 30.50, kind: .expense, classification: .personal, user: User(name: "Gerard", email: "gerardgomez11@me.com", notificationEnabled: false))
+    static let sandwich = Transaction(name: "Sandwich", amount: 12.50, kind: .expense, classification: .personal)
+    static let gas = Transaction(name: "Gas", amount: 52.20, kind: .expense, classification: .business)
+    static let paycheck = Transaction(name: "Paycheck", amount: 2000.50, kind: .income, classification: .personal)
+    static let rent = Transaction(name: "Rent", amount: 1950.50, kind: .expense, classification: .personal)
+    static let overtime = Transaction(name: "Overtime", amount: 800, kind: .income, classification: .personal)
+    static let books = Transaction(name: "Books", amount: 120.50, kind: .expense, classification: .business)
+    static let computer = Transaction(name: "Computer", amount: 1223.50, kind: .expense, classification: .business)
+    static let movie = Transaction(name: "Movie", amount: 30.50, kind: .expense, classification: .personal)
+    
+    static var preview: [Transaction] {
+        [sandwich, gas, paycheck, rent, overtime, books, computer, movie ]
+    }
 }

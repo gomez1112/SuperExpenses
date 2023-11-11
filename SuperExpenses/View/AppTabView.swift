@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct AppTabView: View {
+    @Binding var selectedScreen: AppScreen?
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView(selection: $selectedScreen ) {
+            ForEach(AppScreen.allCases) { screen in
+                screen.destination()
+                    .tag(screen as AppScreen?)
+                    .tabItem {
+                        screen.label
+                    }
+            }
+        }
     }
 }
 
 #Preview {
-    AppTabView()
+    AppTabView(selectedScreen: .constant(.transactions))
+        .modelContainer(PreviewSampleData.container)
 }

@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct AppContentColumn: View {
+    @Binding var selectedScreen: AppScreen?
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Group {
+            if let selectedScreen {
+                selectedScreen.destination()
+            } else {
+                ContentUnavailableView("Select something from the sidebar", systemImage: "sidebar.left")
+            }
+        }
+        #if os(macOS)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background()
+        #endif
     }
 }
 
 #Preview {
-    AppContentColumn()
+    AppContentColumn(selectedScreen: .constant(.transactions))
 }

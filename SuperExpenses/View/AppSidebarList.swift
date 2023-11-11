@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct AppSidebarList: View {
+    @Binding var selectedScreen: AppScreen?
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(selection: $selectedScreen) {
+            ForEach(AppScreen.allCases) { screen in
+                NavigationLink(value: screen) {
+                    screen.label
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    AppSidebarList()
+    AppSidebarList(selectedScreen: .constant(.transactions))
 }

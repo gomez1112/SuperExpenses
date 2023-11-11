@@ -7,14 +7,21 @@
 
 import SwiftData
 
-extension ModelContainer {
-    static var sample: () throws -> ModelContainer = {
-        let schema = Schema([Transaction.self, Category.self, User.self])
+actor PreviewSampleData {
+    static var container: ModelContainer = {
+        createContainer
+    }()
+    static private var createContainer: ModelContainer {
+        let schema = Schema([Transaction.self, Category.self])
         let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: schema, configurations: [configuration])
-        Task { @MainActor in
-            Category.insertSampleData(context: container.mainContext)
+        do {
+            let container = try ModelContainer(for: schema, configurations: [configuration])
+            Task { @MainActor in
+                Category.insertSampleData(context: container.mainContext)
+            }
+            return container
+        } catch {
+            fatalError("Cannot load container: \(error.localizedDescription)")
         }
-        return container
     }
 }

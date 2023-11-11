@@ -5,20 +5,29 @@
 //  Created by Gerard Gomez on 11/11/23.
 //
 
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.prefersTabNavigation) private var prefersTabNavigation
+    @State private var selectedScreen: AppScreen?
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if prefersTabNavigation {
+            AppTabView(selectedScreen: $selectedScreen)
+        } else {
+            NavigationSplitView {
+                AppSidebarList(selectedScreen: $selectedScreen)
+                    .navigationTitle("SuperExpenses")
+            } content: {
+                AppContentColumn(selectedScreen: $selectedScreen)
+            } detail: {
+                AppDetailColumn()
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .modelContainer(PreviewSampleData.container)
 }

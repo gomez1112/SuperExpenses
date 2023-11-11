@@ -5,6 +5,7 @@
 //  Created by Gerard Gomez on 11/11/23.
 //
 
+import SwiftData
 import SwiftUI
 
 @main
@@ -13,5 +14,6 @@ struct SuperExpensesApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: [Category.self, Transaction.self])
     }
 }

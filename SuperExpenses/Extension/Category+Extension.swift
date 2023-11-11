@@ -17,6 +17,10 @@ extension Category {
     static let education = Category(name: "Education", symbol: "book.circle", color: Color.yellow.rgbaColor)
     static let vehicle = Category(name: "Vehicle", symbol: "car.circle", color: Color.pink.rgbaColor)
     
+    static var preview: [Category] {
+        [income, bill, enterntaiment, groceries, education, vehicle]
+    }
+    
     static func insertSampleData(context: ModelContext) {
         context.insert(income)
         context.insert(bill)
@@ -33,6 +37,15 @@ extension Category {
         context.insert(Transaction.books)
         context.insert(Transaction.computer)
         context.insert(Transaction.movie)
+        
+        Transaction.sandwich.category = groceries
+        Transaction.gas.category = vehicle
+        Transaction.paycheck.category = income
+        Transaction.rent.category = bill
+        Transaction.overtime.category = income
+        Transaction.books.category = education
+        Transaction.computer.category = education
+        Transaction.movie.category = enterntaiment
     }
     static func reloadSampleData(context: ModelContext) {
         do {

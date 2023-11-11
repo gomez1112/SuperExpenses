@@ -9,7 +9,11 @@ import SwiftUI
 
 struct AppDetailColumn: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TransactionDetailView()
+        #if os(macOS)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background()
+        #endif
     }
 }
 
