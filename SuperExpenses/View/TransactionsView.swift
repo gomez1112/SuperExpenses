@@ -27,7 +27,6 @@ struct TransactionsView: View {
                         } header: {
                             Text(yearlyTransactions.year.formatted(.dateTime.year()))
                         }
-
                     }
                 }
             }
@@ -76,7 +75,9 @@ struct YearSection: View {
             ForEach(monthlyTransactions.keys.sorted(), id: \.self) { month in
                 if let transactions = monthlyTransactions[month] {
                     MonthSection(month: month, transactions: transactions, categories: categories)
+                        .animation(nil, value: month)
                 }
+                    
             }
         }
     }
@@ -92,7 +93,7 @@ struct MonthSection: View {
             ForEach(categories, id: \.self) { category in
                 if let categoryTransaction = transactionsForCategory(transactions, category: category) {
                     Section(category.name) {
-                        ForEach(categoryTransaction, id: \.self) { transaction in
+                        ForEach(categoryTransaction, id: \.id) { transaction in
                             NavigationLink(value: transaction) {
                                 TransactionView(transaction: transaction)
                             }
@@ -100,6 +101,7 @@ struct MonthSection: View {
                     }
                 }
             }
+            
         } label: {
             Text(month.formatted(.dateTime.month(.wide)))
         }
@@ -110,12 +112,12 @@ struct MonthSection: View {
         return filteredTransactions.isEmpty ? nil : filteredTransactions
     }
 }
-struct YearlyTransactions {
+private struct YearlyTransactions {
     let year: Date
     let monthlyTransactions: [MonthlyTransactions]
 }
 
-struct MonthlyTransactions {
+private struct MonthlyTransactions {
     let month: Date
     let transactions: [Transaction]
 }
