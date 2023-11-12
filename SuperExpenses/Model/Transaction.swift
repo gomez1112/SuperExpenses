@@ -12,7 +12,7 @@ import SwiftData
 @Model
 final class Transaction {
     var name = ""
-    var amount = 0.0
+    var amount: Double = 0.0
     var kind: Kind = Kind.expense
     var classification: Classification = Classification.personal
     var category: Category?

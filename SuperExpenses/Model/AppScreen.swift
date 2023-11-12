@@ -32,14 +32,14 @@ enum AppScreen: Identifiable, Hashable, CaseIterable {
     }
     
     @ViewBuilder
-    func destination() -> some View {
+    func destination(transaction: Binding<Transaction?>, category: Binding<Category?>) -> some View {
         switch self {
             case .home:
                 Home()
             case .transactions:
-                TransactionsView()
+                TransactionsView(selectedTransaction: transaction)
             case .category:
-                CategoryListView()
+                CategoryListView(selectedCategory: category)
             case .statistics:
                 Statistics()
             case .profile:

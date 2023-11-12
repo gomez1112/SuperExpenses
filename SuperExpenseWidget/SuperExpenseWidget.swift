@@ -5,50 +5,53 @@
 //  Created by Gerard Gomez on 11/12/23.
 //
 
+import SwiftData
 import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+    @MainActor func placeholder(in context: Context) -> SimpleEntry {
+        SimpleEntry(date: Date(), transactions: getTransactions)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
+    @MainActor func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
+        let entry = SimpleEntry(date: Date(), transactions: getTransactions)
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+    @MainActor func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+       
+        let timeline = Timeline(entries: [SimpleEntry(date: .now, transactions: getTransactions)], policy: .never)
         completion(timeline)
+    }
+    @MainActor
+    private var getTransactions: [Transaction] {
+        guard let container = try? ModelContainer(for: Category.self, Transaction.self) else { return [] }
+        let threeDaysAgo = Calendar.current.date(byAdding: .day, value: -3, to: Date())!
+        var descriptor = FetchDescriptor<Transaction>(predicate: #Predicate { transaction in
+            transaction.date >= threeDaysAgo
+        })
+        descriptor.fetchLimit = 3
+        let transactions = try? container.mainContext.fetch(descriptor)
+        return transactions ?? []
+        
     }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let emoji: String
+    let transactions: [Transaction]
 }
 
 struct SuperExpenseWidgetEntryView : View {
     var entry: Provider.Entry
-
     var body: some View {
         VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Emoji:")
-            Text(entry.emoji)
+            Text("Most Recent Transactions")
+                .font(.title)
+            ForEach(entry.transactions) { transaction in
+                TransactionView(transaction: transaction)
+            }
         }
     }
 }
@@ -67,14 +70,14 @@ struct SuperExpenseWidget: Widget {
                     .background()
             }
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Recent Transactions Widget")
+        .description("This widget shows the 3 most recents transactions.")
     }
 }
 
 #Preview(as: .systemSmall) {
     SuperExpenseWidget()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
+    SimpleEntry(date: .now, transactions: [Transaction.books])
+    SimpleEntry(date: .now, transactions: [Transaction.paycheck])
 }

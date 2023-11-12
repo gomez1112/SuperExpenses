@@ -17,6 +17,7 @@ struct AppSidebarList: View {
                 }
             }
         }
+        .navigationTitle("Super Expense")
     }
 }
 

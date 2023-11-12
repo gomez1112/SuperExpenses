@@ -9,10 +9,12 @@ import SwiftUI
 
 struct AppTabView: View {
     @Binding var selectedScreen: AppScreen?
+    @Binding var selectedTransaction: Transaction?
+    @Binding var selectedCategory: Category?
     var body: some View {
         TabView(selection: $selectedScreen ) {
             ForEach(AppScreen.allCases) { screen in
-                screen.destination()
+                screen.destination(transaction: $selectedTransaction, category: $selectedCategory)
                     .tag(screen as AppScreen?)
                     .tabItem {
                         screen.label
@@ -23,6 +25,6 @@ struct AppTabView: View {
 }
 
 #Preview {
-    AppTabView(selectedScreen: .constant(.transactions))
+    AppTabView(selectedScreen: .constant(.transactions), selectedTransaction: .constant(nil), selectedCategory: .constant(nil))
         .modelContainer(PreviewSampleData.container)
 }

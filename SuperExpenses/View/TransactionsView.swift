@@ -7,14 +7,13 @@
 
 import SwiftData
 import SwiftUI
+import WidgetKit
 
 struct TransactionsView: View {
+    @Binding var selectedTransaction: Transaction?
     var body: some View {
         NavigationStack {
-            TransactionsListView()
-                .navigationDestination(for: Transaction.self) { transaction in
-                    TransactionDetailView(transaction: transaction)
-                }
+            TransactionsListView(selectedTransaction: $selectedTransaction)
                 .navigationTitle("Transactions")
                 .navigationBarTitleDisplayMode(.inline)
         }
@@ -50,7 +49,9 @@ struct MonthSection: View {
                 if let categoryTransaction = transactionsForCategory(transactions, category: category) {
                     Section(category.name) {
                         ForEach(categoryTransaction, id: \.id) { transaction in
-                            NavigationLink(value: transaction) {
+                            NavigationLink {
+                                TransactionDetailView(transaction: transaction)
+                            } label: {
                                 TransactionView(transaction: transaction)
                             }
                         }
@@ -79,7 +80,7 @@ private struct MonthlyTransactions {
 }
 
 #Preview {
-    TransactionsView()
+    TransactionsView(selectedTransaction: .constant(nil))
         .modelContainer(PreviewSampleData.container)
 }
 
@@ -89,9 +90,10 @@ struct TransactionsListView: View {
     @Query private var categories: [Category]
     @State private var isEditorPresented = false
     @Query(sort: \Transaction.date) private var transactions: [Transaction]
+    @Binding var selectedTransaction: Transaction?
     
     var body: some View {
-        List {
+        List(selection: $selectedTransaction) {
             ForEach(yearGroupedTransactions, id: \.year) { yearlyTransactions in
                 Section {
                     ForEach(yearlyTransactions.monthlyTransactions, id: \.month) { monthlyTransactions in
@@ -150,6 +152,7 @@ struct TransactionsListView: View {
         var body: some View {
             Button {
                 isActive = true
+                WidgetCenter.shared.reloadAllTimelines()
             } label: {
                 Label("Add a transaction", systemImage: "plus")
                     .help("Add a transaction")

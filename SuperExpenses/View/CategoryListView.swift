@@ -9,33 +9,29 @@ import SwiftData
 import SwiftUI
 
 struct CategoryListView: View {
-    @Environment(\.modelContext) private var context
     @Query private var categories: [Category]
+    @Binding var selectedCategory: Category?
     
     var body: some View {
         NavigationStack {
-            List {
-                ListCategories(categories: categories)
-            }
-            .navigationDestination(for: Category.self) { category in
-                AllTransactions(category: category)
+            List(selection: $selectedCategory) {
+                ForEach(categories) { category in
+                    NavigationLink {
+                        AllTransactions(category: category)
+                    } label: {
+                        Text(category.name.capitalized)
+                    }
+                    
+                }
             }
             .navigationTitle("Categories")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
-private struct ListCategories: View {
-    var categories: [Category]
-    var body: some View {
-        ForEach(categories) { category in
-            NavigationLink(value: category) {
-                Text(category.name)
-            }
-        }
-    }
-}
+
+
 #Preview {
-    CategoryListView()
+    CategoryListView(selectedCategory: .constant(nil))
         .modelContainer(PreviewSampleData.container)
 }

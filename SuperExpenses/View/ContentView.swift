@@ -11,17 +11,18 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.prefersTabNavigation) private var prefersTabNavigation
     @State private var selectedScreen: AppScreen?
+    @State private var selectedTransaction: Transaction?
+    @State private var selectedCagory: Category?
     var body: some View {
         if prefersTabNavigation {
-            AppTabView(selectedScreen: $selectedScreen)
+            AppTabView(selectedScreen: $selectedScreen, selectedTransaction: $selectedTransaction, selectedCategory: $selectedCagory)
         } else {
             NavigationSplitView {
                 AppSidebarList(selectedScreen: $selectedScreen)
-                    .navigationTitle("SuperExpenses")
             } content: {
-                AppContentColumn(selectedScreen: $selectedScreen)
+                AppContentColumn(selectedScreen: $selectedScreen, selectedTransaction: $selectedTransaction, selectedCategory: $selectedCagory)
             } detail: {
-                AppDetailColumn()
+                AppDetailColumn(selectedTransaction: $selectedTransaction, selectedCategory: $selectedCagory)
             }
         }
     }

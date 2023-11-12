@@ -22,15 +22,14 @@ struct Home: View {
                     .font(.title2)
                     .fontWeight(.bold)
                 ForEach(transactions.prefix(7)) { transaction in
-                    NavigationLink(value: transaction) {
+                    NavigationLink {
+                        TransactionDetailView(transaction: transaction)
+                    } label: {
                         TransactionView(transaction: transaction)
                     }
                 }
             }
             .listStyle(.plain)
-            .navigationDestination(for: Transaction.self) { transaction in
-                TransactionDetailView(transaction: transaction)
-            }
             .navigationTitle("Home")
         }
     }

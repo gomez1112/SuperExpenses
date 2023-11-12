@@ -13,6 +13,7 @@ struct TransactionDetailView: View {
     var transaction: Transaction?
     @State private var isEditing = false
     @State private var isDeleting = false
+    
     var body: some View {
         Group {
             if let transaction {
@@ -109,6 +110,6 @@ struct DetailRow: View {
 }
 
 #Preview {
-    TransactionDetailView(transaction: Transaction.rent)
+    TransactionDetailView(transaction: Transaction.books)
         .modelContainer(PreviewSampleData.container)
 }

@@ -54,6 +54,7 @@ struct TransactionEditor: View {
                 DatePicker("Select Date", selection: $selectedDate)
                 TextField("Detail", text: $detail.bound)
             }
+            .formStyle(.grouped)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text(editorTitle)
@@ -79,6 +80,7 @@ struct TransactionEditor: View {
                 amount = transaction.amount
                 selectedKind = transaction.kind
                 selectedClassification = transaction.classification
+                selectedCategory = transaction.category
                 selectedDate = transaction.date
                 detail = transaction.detail
             }
@@ -90,6 +92,7 @@ struct TransactionEditor: View {
             transaction.amount = amount
             transaction.kind = selectedKind
             transaction.classification = selectedClassification
+            transaction.category = selectedCategory
             transaction.date = selectedDate
             transaction.detail = detail
         } else {
@@ -105,10 +108,3 @@ struct TransactionEditor: View {
     TransactionEditor(transaction: Transaction.books)
         .modelContainer(PreviewSampleData.container)
 }
-//var name: String
-//var amount: Double
-//var kind: Kind
-//var classification: Classification
-//var category: Category?
-//var date: Date = Date()
-//var detail: String?

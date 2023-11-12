@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC1410D72B00EBBD00ADA0FD /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48442AFFB1BF008FF86B /* Transaction.swift */; };
+		CC1410D92B00EBC700ADA0FD /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48542AFFBFEF008FF86B /* PreviewSampleData.swift */; };
+		CC1410DA2B00EBC900ADA0FD /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48462AFFB2A8008FF86B /* Category.swift */; };
+		CC1410DB2B00EBCC00ADA0FD /* CodableColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48482AFFB354008FF86B /* CodableColor.swift */; };
+		CC1410DC2B00EBCE00ADA0FD /* PrefersTabNavigationEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48642AFFD681008FF86B /* PrefersTabNavigationEnvironmentKey.swift */; };
+		CC1410DD2B00EBD400ADA0FD /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB484A2AFFB376008FF86B /* Color+Extension.swift */; };
+		CC1410DE2B00EBDA00ADA0FD /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48742B00701B008FF86B /* Optional+Extension.swift */; };
+		CC1410DF2B00EBDD00ADA0FD /* FormatStyle + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48622AFFCCAE008FF86B /* FormatStyle + Extension.swift */; };
+		CC1410E02B00EBE100ADA0FD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB484C2AFFB37E008FF86B /* UIColor+Extension.swift */; };
+		CC1410E12B00EBE500ADA0FD /* Transaction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48502AFFBB55008FF86B /* Transaction+Extension.swift */; };
+		CC1410E22B00EBE700ADA0FD /* Category+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48522AFFBCAB008FF86B /* Category+Extension.swift */; };
+		CC1410E32B00FF8C00ADA0FD /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48602AFFC6EE008FF86B /* TransactionView.swift */; };
+		CC70BF252B00E97A00CB22DA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC70BF242B00E97A00CB22DA /* WidgetKit.framework */; };
+		CC70BF272B00E97A00CB22DA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC70BF262B00E97A00CB22DA /* SwiftUI.framework */; };
+		CC70BF2A2B00E97A00CB22DA /* SuperExpenseWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC70BF292B00E97A00CB22DA /* SuperExpenseWidgetBundle.swift */; };
+		CC70BF2C2B00E97A00CB22DA /* SuperExpenseWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC70BF2B2B00E97A00CB22DA /* SuperExpenseWidget.swift */; };
+		CC70BF2E2B00E97C00CB22DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC70BF2D2B00E97C00CB22DA /* Assets.xcassets */; };
+		CC70BF322B00E97C00CB22DA /* SuperExpenseWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CC70BF222B00E97A00CB22DA /* SuperExpenseWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CCCB48332AFFB14E008FF86B /* SuperExpensesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48322AFFB14E008FF86B /* SuperExpensesApp.swift */; };
 		CCCB48352AFFB14E008FF86B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48342AFFB14E008FF86B /* ContentView.swift */; };
 		CCCB48372AFFB150008FF86B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCCB48362AFFB150008FF86B /* Assets.xcassets */; };
@@ -38,8 +56,40 @@
 		CCCB48792B0085D2008FF86B /* AllTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48782B0085D2008FF86B /* AllTransactions.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CC70BF302B00E97C00CB22DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCCB48272AFFB14E008FF86B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC70BF212B00E97A00CB22DA;
+			remoteInfo = SuperExpenseWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CC70BF362B00E97C00CB22DA /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CC70BF322B00E97C00CB22DA /* SuperExpenseWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CC70BF1D2B00DD8500CB22DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CC70BF222B00E97A00CB22DA /* SuperExpenseWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SuperExpenseWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC70BF242B00E97A00CB22DA /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		CC70BF262B00E97A00CB22DA /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		CC70BF292B00E97A00CB22DA /* SuperExpenseWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperExpenseWidgetBundle.swift; sourceTree = "<group>"; };
+		CC70BF2B2B00E97A00CB22DA /* SuperExpenseWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperExpenseWidget.swift; sourceTree = "<group>"; };
+		CC70BF2D2B00E97C00CB22DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC70BF2F2B00E97C00CB22DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC70BF372B00E98F00CB22DA /* SuperExpenseWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuperExpenseWidgetExtension.entitlements; sourceTree = "<group>"; };
 		CCCB482F2AFFB14E008FF86B /* SuperExpenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperExpenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCCB48322AFFB14E008FF86B /* SuperExpensesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperExpensesApp.swift; sourceTree = "<group>"; };
 		CCCB48342AFFB14E008FF86B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +124,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CC70BF1F2B00E97A00CB22DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC70BF272B00E97A00CB22DA /* SwiftUI.framework in Frameworks */,
+				CC70BF252B00E97A00CB22DA /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CCCB482C2AFFB14E008FF86B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,10 +143,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC70BF232B00E97A00CB22DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC70BF242B00E97A00CB22DA /* WidgetKit.framework */,
+				CC70BF262B00E97A00CB22DA /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC70BF282B00E97A00CB22DA /* SuperExpenseWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CC70BF292B00E97A00CB22DA /* SuperExpenseWidgetBundle.swift */,
+				CC70BF2B2B00E97A00CB22DA /* SuperExpenseWidget.swift */,
+				CC70BF2D2B00E97C00CB22DA /* Assets.xcassets */,
+				CC70BF2F2B00E97C00CB22DA /* Info.plist */,
+			);
+			path = SuperExpenseWidget;
+			sourceTree = "<group>";
+		};
 		CCCB48262AFFB14E008FF86B = {
 			isa = PBXGroup;
 			children = (
+				CC70BF372B00E98F00CB22DA /* SuperExpenseWidgetExtension.entitlements */,
 				CCCB48312AFFB14E008FF86B /* SuperExpenses */,
+				CC70BF282B00E97A00CB22DA /* SuperExpenseWidget */,
+				CC70BF232B00E97A00CB22DA /* Frameworks */,
 				CCCB48302AFFB14E008FF86B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				CCCB482F2AFFB14E008FF86B /* SuperExpenses.app */,
+				CC70BF222B00E97A00CB22DA /* SuperExpenseWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +256,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CC70BF212B00E97A00CB22DA /* SuperExpenseWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC70BF332B00E97C00CB22DA /* Build configuration list for PBXNativeTarget "SuperExpenseWidgetExtension" */;
+			buildPhases = (
+				CC70BF1E2B00E97A00CB22DA /* Sources */,
+				CC70BF1F2B00E97A00CB22DA /* Frameworks */,
+				CC70BF202B00E97A00CB22DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuperExpenseWidgetExtension;
+			productName = SuperExpenseWidgetExtension;
+			productReference = CC70BF222B00E97A00CB22DA /* SuperExpenseWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		CCCB482E2AFFB14E008FF86B /* SuperExpenses */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCCB483E2AFFB150008FF86B /* Build configuration list for PBXNativeTarget "SuperExpenses" */;
@@ -180,10 +280,12 @@
 				CCCB482B2AFFB14E008FF86B /* Sources */,
 				CCCB482C2AFFB14E008FF86B /* Frameworks */,
 				CCCB482D2AFFB14E008FF86B /* Resources */,
+				CC70BF362B00E97C00CB22DA /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CC70BF312B00E97C00CB22DA /* PBXTargetDependency */,
 			);
 			name = SuperExpenses;
 			productName = SuperExpenses;
@@ -200,6 +302,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					CC70BF212B00E97A00CB22DA = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					CCCB482E2AFFB14E008FF86B = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -219,11 +324,20 @@
 			projectRoot = "";
 			targets = (
 				CCCB482E2AFFB14E008FF86B /* SuperExpenses */,
+				CC70BF212B00E97A00CB22DA /* SuperExpenseWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CC70BF202B00E97A00CB22DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC70BF2E2B00E97C00CB22DA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CCCB482D2AFFB14E008FF86B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,6 +350,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CC70BF1E2B00E97A00CB22DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC1410E12B00EBE500ADA0FD /* Transaction+Extension.swift in Sources */,
+				CC70BF2C2B00E97A00CB22DA /* SuperExpenseWidget.swift in Sources */,
+				CC1410DD2B00EBD400ADA0FD /* Color+Extension.swift in Sources */,
+				CC1410D92B00EBC700ADA0FD /* PreviewSampleData.swift in Sources */,
+				CC1410E02B00EBE100ADA0FD /* UIColor+Extension.swift in Sources */,
+				CC1410E32B00FF8C00ADA0FD /* TransactionView.swift in Sources */,
+				CC70BF2A2B00E97A00CB22DA /* SuperExpenseWidgetBundle.swift in Sources */,
+				CC1410DB2B00EBCC00ADA0FD /* CodableColor.swift in Sources */,
+				CC1410E22B00EBE700ADA0FD /* Category+Extension.swift in Sources */,
+				CC1410D72B00EBBD00ADA0FD /* Transaction.swift in Sources */,
+				CC1410DE2B00EBDA00ADA0FD /* Optional+Extension.swift in Sources */,
+				CC1410DF2B00EBDD00ADA0FD /* FormatStyle + Extension.swift in Sources */,
+				CC1410DA2B00EBC900ADA0FD /* Category.swift in Sources */,
+				CC1410DC2B00EBCE00ADA0FD /* PrefersTabNavigationEnvironmentKey.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CCCB482B2AFFB14E008FF86B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,7 +407,76 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		CC70BF312B00E97C00CB22DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC70BF212B00E97A00CB22DA /* SuperExpenseWidgetExtension */;
+			targetProxy = CC70BF302B00E97C00CB22DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		CC70BF342B00E97C00CB22DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SuperExpenseWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88QL9VPLMY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SuperExpenseWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SuperExpenseWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.transfinite.SuperExpenses.SuperExpenseWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CC70BF352B00E97C00CB22DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SuperExpenseWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88QL9VPLMY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SuperExpenseWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SuperExpenseWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.transfinite.SuperExpenses.SuperExpenseWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		CCCB483C2AFFB150008FF86B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -390,6 +594,7 @@
 		CCCB483F2AFFB150008FF86B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SuperExpenses/SuperExpenses.entitlements;
@@ -429,6 +634,7 @@
 		CCCB48402AFFB150008FF86B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SuperExpenses/SuperExpenses.entitlements;
@@ -468,6 +674,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CC70BF332B00E97C00CB22DA /* Build configuration list for PBXNativeTarget "SuperExpenseWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC70BF342B00E97C00CB22DA /* Debug */,
+				CC70BF352B00E97C00CB22DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CCCB482A2AFFB14E008FF86B /* Build configuration list for PBXProject "SuperExpenses" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

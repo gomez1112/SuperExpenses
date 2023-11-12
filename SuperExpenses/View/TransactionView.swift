@@ -33,6 +33,9 @@ struct TransactionView: View {
                 .foregroundStyle(transaction.kind == .income ? .green : .red)
             
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Transaction details")
+        .accessibilityValue("Amount: \(transaction.amount)")
         .padding(.vertical, 8)
         .navigationBarTitleDisplayMode(.inline)
     }

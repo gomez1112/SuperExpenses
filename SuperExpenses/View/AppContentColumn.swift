@@ -9,13 +9,16 @@ import SwiftUI
 
 struct AppContentColumn: View {
     @Binding var selectedScreen: AppScreen?
+    @Binding var selectedTransaction: Transaction?
+    @Binding var selectedCategory: Category?
     var body: some View {
         Group {
             if let selectedScreen {
-                selectedScreen.destination()
+                selectedScreen.destination(transaction: $selectedTransaction, category: $selectedCategory)
             } else {
-                ContentUnavailableView("Select something from the sidebar", systemImage: "sidebar.left")
+                ContentUnavailableView("Select from the sidebar", systemImage: "sidebar.left")
             }
+            
         }
         #if os(macOS)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -25,5 +28,5 @@ struct AppContentColumn: View {
 }
 
 #Preview {
-    AppContentColumn(selectedScreen: .constant(.transactions))
+    AppContentColumn(selectedScreen: .constant(.transactions), selectedTransaction: .constant(nil), selectedCategory: .constant(nil))
 }
