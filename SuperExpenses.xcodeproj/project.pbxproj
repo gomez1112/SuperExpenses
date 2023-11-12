@@ -39,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC70BF1D2B00DD8500CB22DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CCCB482F2AFFB14E008FF86B /* SuperExpenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperExpenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCCB48322AFFB14E008FF86B /* SuperExpensesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperExpensesApp.swift; sourceTree = "<group>"; };
 		CCCB48342AFFB14E008FF86B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		CCCB48312AFFB14E008FF86B /* SuperExpenses */ = {
 			isa = PBXGroup;
 			children = (
+				CC70BF1D2B00DD8500CB22DA /* Info.plist */,
 				CCCB48322AFFB14E008FF86B /* SuperExpensesApp.swift */,
 				CCCB48432AFFB1A2008FF86B /* Extension */,
 				CCCB48422AFFB19E008FF86B /* Model */,
@@ -398,6 +400,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SuperExpenses/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -436,6 +439,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SuperExpenses/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

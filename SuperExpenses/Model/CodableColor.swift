@@ -8,8 +8,15 @@
 import Foundation
 
 struct CodableColor: Codable, Hashable {
-    var r: CGFloat
-    var g: CGFloat
-    var b: CGFloat
-    var a: CGFloat
+    var r: CGFloat = 10
+    var g: CGFloat = 10
+    var b: CGFloat = 10
+    var a: CGFloat = 10
+    
+    init(r: CGFloat = 10, g: CGFloat = 10, b: CGFloat = 10, a: CGFloat = 10) {
+        self.r = r
+        self.g = g
+        self.b = b
+        self.a = a
+    }
 }

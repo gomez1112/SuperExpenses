@@ -11,15 +11,15 @@ import SwiftData
 
 @Model
 final class Transaction {
-    var name: String
-    var amount: Double
-    var kind: Kind
-    var classification: Classification
+    var name = ""
+    var amount = 0.0
+    var kind: Kind = Kind.expense
+    var classification: Classification = Classification.personal
     var category: Category?
     var date: Date = Date()
     var detail: String?
     
-    init(name: String, amount: Double, kind: Kind, classification: Classification, category: Category? = nil, date: Date = Date(), detail: String? = nil) {
+    init(name: String = "", amount: Double = 0.0, kind: Kind = .expense, classification: Classification = .personal, category: Category? = nil, date: Date = Date(), detail: String? = nil) {
         self.name = name
         self.amount = amount
         self.kind = kind

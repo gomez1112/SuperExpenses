@@ -102,10 +102,23 @@ struct TransactionsListView: View {
                     Text(yearlyTransactions.year.formatted(.dateTime.year()))
                 }
             }
-            .sheet(isPresented: $isEditorPresented) {
-                TransactionEditor(transaction: nil)
+        }
+        .sheet(isPresented: $isEditorPresented) {
+            TransactionEditor(transaction: nil)
+        }
+        .overlay {
+            if transactions.isEmpty {
+                ContentUnavailableView {
+                    Label("No transactions", systemImage: "creditcard")
+                } description: {
+                    AddTransactionButton(isActive: $isEditorPresented)
+                }
             }
-            
+        }
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                AddTransactionButton(isActive: $isEditorPresented)
+            }
         }
     }
     private var yearGroupedTransactions: [YearlyTransactions] {
