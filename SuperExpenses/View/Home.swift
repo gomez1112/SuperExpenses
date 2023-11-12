@@ -9,14 +9,16 @@ import SwiftData
 import SwiftUI
 
 struct Home: View {
+    @Environment(DataModel.self) private var model
+    @Environment(\.modelContext) private var context
     @Query(sort: \Transaction.date) private var transactions: [Transaction]
     @State private var showTransactionEditor = false
     var body: some View {
         NavigationStack {
             List {
                 HStack {
-                    StatisticsCard(title: "Total Income", value: totalIncome, color: .green)
-                    StatisticsCard(title: "Total Expenses", value: totalExpenses, color: .red)
+                    StatisticsCard(title: "Total Income", value: model.totalIncome(transactions: transactions), color: .green)
+                    StatisticsCard(title: "Total Expenses", value: model.totalExpenses(transactions: transactions), color: .red)
                 }
                 Text("Recent Transactions")
                     .font(.title2)
@@ -28,16 +30,15 @@ struct Home: View {
                         TransactionView(transaction: transaction)
                     }
                 }
+                .onDelete { indexSet in
+                    model.removeItems(items: transactions, at: indexSet) { transaction in
+                        context.delete(transaction)
+                    }
+                }
             }
             .listStyle(.plain)
             .navigationTitle("Home")
         }
-    }
-    var totalIncome: Double {
-        transactions.filter { $0.kind == .income }.map(\.amount).reduce(0,+)
-    }
-    var totalExpenses: Double {
-        transactions.filter { $0.kind == .expense }.map(\.amount).reduce(0,+)
     }
 }
 

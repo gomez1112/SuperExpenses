@@ -9,6 +9,8 @@ import SwiftData
 import SwiftUI
 
 struct CategoryListView: View {
+    @Environment(DataModel.self) private var model
+    @Environment(\.modelContext) private var context
     @Query private var categories: [Category]
     @Binding var selectedCategory: Category?
     
@@ -21,7 +23,11 @@ struct CategoryListView: View {
                     } label: {
                         Text(category.name.capitalized)
                     }
-                    
+                }
+                .onDelete { indexSet in
+                    model.removeItems(items: categories, at: indexSet) { category in
+                        context.delete(category)
+                    }
                 }
             }
             .navigationTitle("Categories")

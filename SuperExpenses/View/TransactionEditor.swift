@@ -5,21 +5,16 @@
 //  Created by Gerard Gomez on 11/11/23.
 //
 
+import Observation
 import SwiftData
 import SwiftUI
 
 struct TransactionEditor: View {
+    @State private var viewModel = ViewModel()
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     let transaction: Transaction?
     @Query private var categories: [Category]
-    @State private var name = ""
-    @State private var amount = 0.0
-    @State private var selectedKind: Transaction.Kind = .expense
-    @State private var selectedClassification: Transaction.Classification = .personal
-    @State private var selectedCategory: Category?
-    @State private var selectedDate: Date = Date()
-    @State private var detail: String?
     
     private var editorTitle: String {
         transaction == nil ? "Add Transaction" : "Edit Transaction"
@@ -27,23 +22,23 @@ struct TransactionEditor: View {
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Name", text: $name)
-                TextField("Amount", value: $amount, format: .number)
-                Picker("Transaction Type", selection: $selectedKind) {
+                TextField("Name", text: $viewModel.name)
+                TextField("Amount", value: $viewModel.amount, format: .number)
+                Picker("Transaction Type", selection: $viewModel.selectedKind) {
                     ForEach(Transaction.Kind.allCases) { kind in
                         Text(kind.rawValue.capitalized)
                             .tag(kind)
                     }
                 }
                 .pickerStyle(.segmented)
-                Picker("Transaction Classification", selection: $selectedClassification) {
+                Picker("Transaction Classification", selection: $viewModel.selectedClassification) {
                     ForEach(Transaction.Classification.allCases) { classification in
                         Text(classification.rawValue.capitalized)
                             .tag(classification)
                     }
                 }
                 .pickerStyle(.segmented)
-                Picker("Category", selection: $selectedCategory) {
+                Picker("Category", selection: $viewModel.selectedCategory) {
                     Text("Select a category")
                         .tag(nil as Category?)
                     ForEach(categories) { category in
@@ -51,8 +46,8 @@ struct TransactionEditor: View {
                             .tag(category as Category?)
                     }
                 }
-                DatePicker("Select Date", selection: $selectedDate)
-                TextField("Detail", text: $detail.bound)
+                DatePicker("Select Date", selection: $viewModel.selectedDate)
+                TextField("Detail", text: $viewModel.detail.bound)
             }
             .formStyle(.grouped)
             .toolbar {
@@ -62,7 +57,7 @@ struct TransactionEditor: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
                         withAnimation {
-                            save()
+                            viewModel.save(transaction: transaction, context: context)
                             dismiss()
                         }
                     }
@@ -76,30 +71,14 @@ struct TransactionEditor: View {
         }
         .onAppear {
             if let transaction {
-                name = transaction.name
-                amount = transaction.amount
-                selectedKind = transaction.kind
-                selectedClassification = transaction.classification
-                selectedCategory = transaction.category
-                selectedDate = transaction.date
-                detail = transaction.detail
+                viewModel.name = transaction.name
+                viewModel.amount = transaction.amount
+                viewModel.selectedKind = transaction.kind
+                viewModel.selectedClassification = transaction.classification
+                viewModel.selectedCategory = transaction.category
+                viewModel.selectedDate = transaction.date
+                viewModel.detail = transaction.detail
             }
-        }
-    }
-    private func save() {
-        if let transaction {
-            transaction.name = name
-            transaction.amount = amount
-            transaction.kind = selectedKind
-            transaction.classification = selectedClassification
-            transaction.category = selectedCategory
-            transaction.date = selectedDate
-            transaction.detail = detail
-        } else {
-            let newTransaction = Transaction(name: name, amount: amount, kind: selectedKind, classification: selectedClassification, date: selectedDate, detail: detail)
-            newTransaction.category = selectedCategory
-            context.insert(newTransaction)
-            
         }
     }
 }

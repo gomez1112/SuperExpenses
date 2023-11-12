@@ -6,3 +6,57 @@
 //
 
 import Foundation
+import Observation
+import SwiftData
+
+
+@Observable
+final class DataModel {
+    func totalIncome(transactions: [Transaction]) -> Double {
+        transactions.filter { $0.kind == .income }.map(\.amount).reduce(0,+)
+    }
+    func totalExpenses(transactions: [Transaction]) -> Double {
+        transactions.filter { $0.kind == .expense }.map(\.amount).reduce(0,+)
+    }
+    func removeItems<T>(items: [T], at indexSet: IndexSet, deleteAction: (T) -> Void) {
+        indexSet.forEach { index in
+            deleteAction(items[index])
+        }
+    }
+  
+//    func removeTransactions(context: ModelContext, transactions: [Transaction], at indexSet: IndexSet) {
+//        for index in indexSet {
+//            let transactionToDelete = transactions[index]
+//            context.delete(transactionToDelete)
+//        }
+//    }
+//    func removeCategories(context: ModelContext, categories: [Category], at indexSet: IndexSet) {
+//        for index in indexSet {
+//            let categoryToDelete = categories[index]
+//            context.delete(categoryToDelete)
+//        }
+//    }
+    
+    
+    func transactionsByCategory(allTransactions: [Transaction], category: Category?) -> [Transaction] {
+        allTransactions.filter { $0.category == category}
+    }
+    func yearGroupedTransactions(transactions: [Transaction]) -> [YearlyTransactions] {
+        let groupedByYear = Dictionary(grouping: transactions) { (transaction) -> Date in
+            let yearComponent = Calendar.current.component(.year, from: transaction.date)
+            return Calendar.current.date(from: DateComponents(year: yearComponent, month: 1, day: 1))!
+        }
+        
+        return groupedByYear.map { year, transactions in
+            let monthlyGroups = Dictionary(grouping: transactions) { (transaction) -> Date in
+                Calendar.current.startOfDay(for: Calendar.current.date(from: DateComponents(year: Calendar.current.component(.year, from: transaction.date), month: Calendar.current.component(.month, from: transaction.date)))!)
+            }
+            
+            let monthlyTransactions = monthlyGroups.map { month, transactions in
+                MonthlyTransactions(month: month, transactions: transactions)
+            }.sorted { $0.month < $1.month }
+            
+            return YearlyTransactions(year: year, monthlyTransactions: monthlyTransactions)
+        }.sorted { $0.year < $1.year }
+    }
+}

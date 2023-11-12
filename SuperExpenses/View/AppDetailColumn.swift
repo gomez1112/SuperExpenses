@@ -16,7 +16,7 @@ struct AppDetailColumn: View {
             if let selectedTransaction {
                 TransactionDetailView(transaction: selectedTransaction)
             }
-            if let selectedCategory{
+            if let selectedCategory {
                 AllTransactions(category: selectedCategory)
             } else {
                 ContentUnavailableView("Select a Transaction", systemImage: "creditcard")

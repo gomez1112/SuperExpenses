@@ -10,10 +10,12 @@ import SwiftUI
 
 @main
 struct SuperExpensesApp: App {
+    @State private var model = DataModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+        .environment(model)
         .modelContainer(for: [Category.self, Transaction.self])
     }
 }
