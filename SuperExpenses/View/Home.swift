@@ -10,28 +10,28 @@ import SwiftUI
 
 struct Home: View {
     @Query(sort: \Transaction.date) private var transactions: [Transaction]
+    @State private var showTransactionEditor = false
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    HStack {
-                        StatisticsCard(title: "Total Income", value: totalIncome, color: .green)
-                        StatisticsCard(title: "Total Expenses", value: totalExpenses, color: .red)
-                    }
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Recent Transactions")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                        ForEach(transactions.prefix(7)) { transaction in
-                            TransactionView(transaction: transaction)
-                        }
-                    }
-                    Spacer()
+            List {
+                HStack {
+                    StatisticsCard(title: "Total Income", value: totalIncome, color: .green)
+                    StatisticsCard(title: "Total Expenses", value: totalExpenses, color: .red)
                 }
-                .padding()
+                Text("Recent Transactions")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                ForEach(transactions.prefix(7)) { transaction in
+                    NavigationLink(value: transaction) {
+                        TransactionView(transaction: transaction)
+                    }
+                }
+            }
+            .listStyle(.plain)
+            .navigationDestination(for: Transaction.self) { transaction in
+                TransactionDetailView(transaction: transaction)
             }
             .navigationTitle("Home")
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
     var totalIncome: Double {
@@ -56,7 +56,6 @@ struct StatisticsCard: View {
                 .font(.title.bold())
                 .foregroundStyle(color)
         }
-        .padding()
         .frame(minWidth: 0, maxWidth: .infinity)
         .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 10))
     }

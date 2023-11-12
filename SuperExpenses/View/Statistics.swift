@@ -12,10 +12,8 @@ import SwiftUI
 struct Statistics: View {
     @Query private var transactions: [Transaction]
     var body: some View {
-        ScrollView {
-            VStack {
-                Text("Financial Overview")
-                    .font(.title)
+        NavigationStack {
+            ScrollView {
                 Chart {
                     ForEach(transactions) { transaction in
                         BarMark(x: .value("Category", transaction.category?.name.capitalized ?? ""), y: .value("Amount", transaction.amount))
@@ -26,9 +24,16 @@ struct Statistics: View {
                 .padding()
                 Chart {
                     ForEach(transactions.filter { $0.kind == .expense }) { transaction in
-                        SectorMark(angle: .value("Amount", transaction.amount))
+                        SectorMark(angle: .value("Amount", transaction.amount),
+                                   innerRadius: .ratio(0.5),
+                                   outerRadius: .inset(10),
+                                   angularInset: 1)
                             .foregroundStyle(by: .value("Category", transaction.category?.name.capitalized ?? ""))
+                            .annotation(position: .overlay) {
+                                Text(transaction.amount.formatted(.localCurrency))
+                            }
                     }
+                    
                 }
                 .frame(height: 300)
                 .padding()
@@ -40,7 +45,9 @@ struct Statistics: View {
                 }
                 .frame(height: 300)
                 .padding()
+                
             }
+            .navigationTitle("Financial Overview")
         }
     }
 }

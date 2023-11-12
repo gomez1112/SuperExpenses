@@ -5,10 +5,14 @@
 //  Created by Gerard Gomez on 11/11/23.
 //
 
+import SwiftData
 import SwiftUI
 
 struct TransactionDetailView: View {
+    @Environment(\.modelContext) private var context
     var transaction: Transaction?
+    @State private var isEditing = false
+    @State private var isDeleting = false
     var body: some View {
         Group {
             if let transaction {
@@ -41,6 +45,28 @@ struct TransactionDetailView: View {
                     .padding(.horizontal)
                     Spacer()
                 }
+                .toolbar {
+                    Button {
+                        isEditing = true
+                    } label: {
+                        Label("Edit \(transaction.name)", systemImage: "pencil")
+                            .help("Edit transaction")
+                    }
+                    Button {
+                        isDeleting = true
+                    } label: {
+                        Label("Delete \(transaction.name)", systemImage: "trash")
+                            .help("Delete transaction")
+                    }
+                }
+                .sheet(isPresented: $isEditing) {
+                    TransactionEditor(transaction: transaction)
+                }
+                .alert("Delete \(transaction.name)", isPresented: $isDeleting) {
+                    Button("Yes, delete \(transaction.name)", role: .destructive) {
+                        delete(transaction)
+                    }
+                }
                 .padding()
                 .navigationTitle(transaction.name)
                 .navigationBarTitleDisplayMode(.inline)
@@ -48,6 +74,9 @@ struct TransactionDetailView: View {
                 ContentUnavailableView("Select a transaction", systemImage: "creditcard")
             }
         }
+    }
+    private func delete(_ transaction: Transaction) {
+        context.delete(transaction)
     }
 }
 

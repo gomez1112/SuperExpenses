@@ -32,6 +32,10 @@
 		CCCB486B2AFFD803008FF86B /* AppSidebarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB486A2AFFD803008FF86B /* AppSidebarList.swift */; };
 		CCCB486D2AFFD872008FF86B /* AppContentColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB486C2AFFD872008FF86B /* AppContentColumn.swift */; };
 		CCCB486F2AFFD8EA008FF86B /* AppDetailColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB486E2AFFD8EA008FF86B /* AppDetailColumn.swift */; };
+		CCCB48732B006CDE008FF86B /* TransactionEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48722B006CDE008FF86B /* TransactionEditor.swift */; };
+		CCCB48752B00701B008FF86B /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48742B00701B008FF86B /* Optional+Extension.swift */; };
+		CCCB48772B007D68008FF86B /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48762B007D68008FF86B /* CategoryListView.swift */; };
+		CCCB48792B0085D2008FF86B /* AllTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48782B0085D2008FF86B /* AllTransactions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +66,10 @@
 		CCCB486A2AFFD803008FF86B /* AppSidebarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSidebarList.swift; sourceTree = "<group>"; };
 		CCCB486C2AFFD872008FF86B /* AppContentColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentColumn.swift; sourceTree = "<group>"; };
 		CCCB486E2AFFD8EA008FF86B /* AppDetailColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailColumn.swift; sourceTree = "<group>"; };
+		CCCB48722B006CDE008FF86B /* TransactionEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEditor.swift; sourceTree = "<group>"; };
+		CCCB48742B00701B008FF86B /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
+		CCCB48762B007D68008FF86B /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		CCCB48782B0085D2008FF86B /* AllTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTransactions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				CCCB48342AFFB14E008FF86B /* ContentView.swift */,
+				CCCB48762B007D68008FF86B /* CategoryListView.swift */,
+				CCCB48722B006CDE008FF86B /* TransactionEditor.swift */,
 				CCCB48582AFFC669008FF86B /* Home.swift */,
 				CCCB486A2AFFD803008FF86B /* AppSidebarList.swift */,
 				CCCB486C2AFFD872008FF86B /* AppContentColumn.swift */,
@@ -124,6 +134,7 @@
 				CCCB48682AFFD7C9008FF86B /* TransactionDetailView.swift */,
 				CCCB48662AFFD6EB008FF86B /* AppTabView.swift */,
 				CCCB485A2AFFC678008FF86B /* TransactionsView.swift */,
+				CCCB48782B0085D2008FF86B /* AllTransactions.swift */,
 				CCCB48602AFFC6EE008FF86B /* TransactionView.swift */,
 				CCCB485C2AFFC687008FF86B /* Statistics.swift */,
 				CCCB485E2AFFC690008FF86B /* Profile.swift */,
@@ -148,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				CCCB484A2AFFB376008FF86B /* Color+Extension.swift */,
+				CCCB48742B00701B008FF86B /* Optional+Extension.swift */,
 				CCCB48622AFFCCAE008FF86B /* FormatStyle + Extension.swift */,
 				CCCB484C2AFFB37E008FF86B /* UIColor+Extension.swift */,
 				CCCB48502AFFBB55008FF86B /* Transaction+Extension.swift */,
@@ -227,12 +239,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCCB484D2AFFB37E008FF86B /* UIColor+Extension.swift in Sources */,
+				CCCB48792B0085D2008FF86B /* AllTransactions.swift in Sources */,
 				CCCB486B2AFFD803008FF86B /* AppSidebarList.swift in Sources */,
 				CCCB48492AFFB354008FF86B /* CodableColor.swift in Sources */,
 				CCCB48532AFFBCAB008FF86B /* Category+Extension.swift in Sources */,
 				CCCB484B2AFFB376008FF86B /* Color+Extension.swift in Sources */,
 				CCCB48552AFFBFEF008FF86B /* PreviewSampleData.swift in Sources */,
 				CCCB48592AFFC669008FF86B /* Home.swift in Sources */,
+				CCCB48732B006CDE008FF86B /* TransactionEditor.swift in Sources */,
 				CCCB48692AFFD7C9008FF86B /* TransactionDetailView.swift in Sources */,
 				CCCB48512AFFBB55008FF86B /* Transaction+Extension.swift in Sources */,
 				CCCB486D2AFFD872008FF86B /* AppContentColumn.swift in Sources */,
@@ -243,10 +257,12 @@
 				CCCB48452AFFB1BF008FF86B /* Transaction.swift in Sources */,
 				CCCB48472AFFB2A8008FF86B /* Category.swift in Sources */,
 				CCCB48612AFFC6EE008FF86B /* TransactionView.swift in Sources */,
+				CCCB48772B007D68008FF86B /* CategoryListView.swift in Sources */,
 				CCCB48632AFFCCAE008FF86B /* FormatStyle + Extension.swift in Sources */,
 				CCCB48572AFFC37B008FF86B /* AppScreen.swift in Sources */,
 				CCCB485D2AFFC687008FF86B /* Statistics.swift in Sources */,
 				CCCB485B2AFFC678008FF86B /* TransactionsView.swift in Sources */,
+				CCCB48752B00701B008FF86B /* Optional+Extension.swift in Sources */,
 				CCCB48672AFFD6EB008FF86B /* AppTabView.swift in Sources */,
 				CCCB48652AFFD681008FF86B /* PrefersTabNavigationEnvironmentKey.swift in Sources */,
 			);

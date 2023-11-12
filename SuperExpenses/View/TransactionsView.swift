@@ -9,60 +9,16 @@ import SwiftData
 import SwiftUI
 
 struct TransactionsView: View {
-    @Environment(\.modelContext) private var context
-    @Query(sort: \Transaction.date) private var transactions: [Transaction]
-    @Query private var categories: [Category]
-    
     var body: some View {
         NavigationStack {
-            List {
-                if transactions.isEmpty {
-                    ContentUnavailableView("Add Transaction", systemImage: "dollarsign.circle", description: Text("Click on the add transaction button to add transactions"))
-                } else {
-                    ForEach(yearGroupedTransactions, id: \.year) { yearlyTransactions in
-                        Section {
-                            ForEach(yearlyTransactions.monthlyTransactions, id: \.month) { monthlyTransactions in
-                                MonthSection(month: monthlyTransactions.month, transactions: monthlyTransactions.transactions, categories: categories)
-                            }
-                        } header: {
-                            Text(yearlyTransactions.year.formatted(.dateTime.year()))
-                        }
-                    }
+            TransactionsListView()
+                .navigationDestination(for: Transaction.self) { transaction in
+                    TransactionDetailView(transaction: transaction)
                 }
-            }
-            .navigationDestination(for: Transaction.self) { transaction in
-                TransactionDetailView(transaction: transaction)
-            }
-            .toolbar {
-                Button {
-                    Category.reloadSampleData(context: context)
-                } label: {
-                    Text("Add Transactions")
-                }
-            }
-            .navigationTitle("Transactions")
+                .navigationTitle("Transactions")
+                .navigationBarTitleDisplayMode(.inline)
         }
     }
-    
-    private var yearGroupedTransactions: [YearlyTransactions] {
-        let groupedByYear = Dictionary(grouping: transactions) { (transaction) -> Date in
-            let yearComponent = Calendar.current.component(.year, from: transaction.date)
-            return Calendar.current.date(from: DateComponents(year: yearComponent, month: 1, day: 1))!
-        }
-        
-        return groupedByYear.map { year, transactions in
-            let monthlyGroups = Dictionary(grouping: transactions) { (transaction) -> Date in
-                Calendar.current.startOfDay(for: Calendar.current.date(from: DateComponents(year: Calendar.current.component(.year, from: transaction.date), month: Calendar.current.component(.month, from: transaction.date)))!)
-            }
-            
-            let monthlyTransactions = monthlyGroups.map { month, transactions in
-                MonthlyTransactions(month: month, transactions: transactions)
-            }.sorted { $0.month < $1.month }
-            
-            return YearlyTransactions(year: year, monthlyTransactions: monthlyTransactions)
-        }.sorted { $0.year < $1.year }
-    }
-
 }
 
 struct YearSection: View {
@@ -77,7 +33,7 @@ struct YearSection: View {
                     MonthSection(month: month, transactions: transactions, categories: categories)
                         .animation(nil, value: month)
                 }
-                    
+                
             }
         }
     }
@@ -125,4 +81,66 @@ private struct MonthlyTransactions {
 #Preview {
     TransactionsView()
         .modelContainer(PreviewSampleData.container)
+}
+
+struct TransactionsListView: View {
+    var category: Category?
+    @Environment(\.modelContext) private var context
+    @Query private var categories: [Category]
+    @State private var isEditorPresented = false
+    @Query(sort: \Transaction.date) private var transactions: [Transaction]
+    
+    var body: some View {
+        List {
+            ForEach(yearGroupedTransactions, id: \.year) { yearlyTransactions in
+                Section {
+                    ForEach(yearlyTransactions.monthlyTransactions, id: \.month) { monthlyTransactions in
+                        MonthSection(month: monthlyTransactions.month, transactions: monthlyTransactions.transactions, categories: categories)
+                    }
+                    .onDelete(perform: removeTransactions)
+                } header: {
+                    Text(yearlyTransactions.year.formatted(.dateTime.year()))
+                }
+            }
+            .sheet(isPresented: $isEditorPresented) {
+                TransactionEditor(transaction: nil)
+            }
+            
+        }
+    }
+    private var yearGroupedTransactions: [YearlyTransactions] {
+        let groupedByYear = Dictionary(grouping: transactions) { (transaction) -> Date in
+            let yearComponent = Calendar.current.component(.year, from: transaction.date)
+            return Calendar.current.date(from: DateComponents(year: yearComponent, month: 1, day: 1))!
+        }
+        
+        return groupedByYear.map { year, transactions in
+            let monthlyGroups = Dictionary(grouping: transactions) { (transaction) -> Date in
+                Calendar.current.startOfDay(for: Calendar.current.date(from: DateComponents(year: Calendar.current.component(.year, from: transaction.date), month: Calendar.current.component(.month, from: transaction.date)))!)
+            }
+            
+            let monthlyTransactions = monthlyGroups.map { month, transactions in
+                MonthlyTransactions(month: month, transactions: transactions)
+            }.sorted { $0.month < $1.month }
+            
+            return YearlyTransactions(year: year, monthlyTransactions: monthlyTransactions)
+        }.sorted { $0.year < $1.year }
+    }
+    private func removeTransactions(at indexSet: IndexSet) {
+        for index in indexSet {
+            let transactionToDelete = transactions[index]
+            context.delete(transactionToDelete)
+        }
+    }
+    struct AddTransactionButton: View {
+        @Binding var isActive: Bool
+        var body: some View {
+            Button {
+                isActive = true
+            } label: {
+                Label("Add a transaction", systemImage: "plus")
+                    .help("Add a transaction")
+            }
+        }
+    }
 }

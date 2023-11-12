@@ -11,6 +11,7 @@ enum AppScreen: Identifiable, Hashable, CaseIterable {
     var id: Self { self }
     case home
     case transactions
+    case category
     case statistics
     case profile
     
@@ -21,6 +22,8 @@ enum AppScreen: Identifiable, Hashable, CaseIterable {
                 Label("Home", systemImage: "house.circle")
             case .transactions:
                 Label("Transactions", systemImage: "creditcard.circle")
+            case .category:
+                Label("Category", systemImage: "car")
             case .statistics:
                 Label("Statistics", systemImage: "chart.pie")
             case .profile:
@@ -35,6 +38,8 @@ enum AppScreen: Identifiable, Hashable, CaseIterable {
                 Home()
             case .transactions:
                 TransactionsView()
+            case .category:
+                CategoryListView()
             case .statistics:
                 Statistics()
             case .profile:
