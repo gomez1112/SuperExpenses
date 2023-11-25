@@ -17,7 +17,7 @@ struct TransactionListView: View {
     @State private var isEditorPresented = false
     @Query(sort: \Transaction.date) private var transactions: [Transaction]
     @Binding var selectedTransaction: Transaction?
-    
+ 
     var body: some View {
         List(selection: $selectedTransaction) {
             ForEach(model.yearGroupedTransactions(transactions: transactions), id: \.year) { yearlyTransactions in

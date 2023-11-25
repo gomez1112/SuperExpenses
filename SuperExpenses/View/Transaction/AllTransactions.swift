@@ -13,7 +13,7 @@ struct AllTransactions: View {
     @Environment(\.modelContext) private var context
     @Query private var allTransactions: [Transaction]
     var category: Category?
-
+ 
     var body: some View {
         NavigationStack {
             List {

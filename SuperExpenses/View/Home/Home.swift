@@ -13,6 +13,7 @@ struct Home: View {
     @Environment(\.modelContext) private var context
     @Query(sort: \Transaction.date) private var transactions: [Transaction]
     @State private var showTransactionEditor = false
+
     var body: some View {
         NavigationStack {
             List {

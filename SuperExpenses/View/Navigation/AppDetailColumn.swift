@@ -11,6 +11,8 @@ import SwiftUI
 struct AppDetailColumn: View {
     @Binding var selectedTransaction: Transaction?
     @Binding var selectedCategory: Category?
+
+    @State private var path = [Transaction]()
     var body: some View {
         Group {
             if let selectedTransaction {

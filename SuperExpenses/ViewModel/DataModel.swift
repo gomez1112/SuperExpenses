@@ -23,20 +23,6 @@ final class DataModel {
             deleteAction(items[index])
         }
     }
-  
-//    func removeTransactions(context: ModelContext, transactions: [Transaction], at indexSet: IndexSet) {
-//        for index in indexSet {
-//            let transactionToDelete = transactions[index]
-//            context.delete(transactionToDelete)
-//        }
-//    }
-//    func removeCategories(context: ModelContext, categories: [Category], at indexSet: IndexSet) {
-//        for index in indexSet {
-//            let categoryToDelete = categories[index]
-//            context.delete(categoryToDelete)
-//        }
-//    }
-    
     
     func transactionsByCategory(allTransactions: [Transaction], category: Category?) -> [Transaction] {
         allTransactions.filter { $0.category == category}

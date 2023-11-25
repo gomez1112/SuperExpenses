@@ -11,6 +11,7 @@ import WidgetKit
 
 struct TransactionsView: View {
     @Binding var selectedTransaction: Transaction?
+
     var body: some View {
         NavigationStack {
             TransactionListView(selectedTransaction: $selectedTransaction)
@@ -24,7 +25,7 @@ struct YearSection: View {
     let year: Date
     let monthlyTransactions: [Date: [Transaction]]
     let categories: [Category]
-    
+
     var body: some View {
         Section(year.formatted(date: .numeric, time: .omitted)) {
             ForEach(monthlyTransactions.keys.sorted(), id: \.self) { month in
@@ -42,7 +43,7 @@ struct MonthSection: View {
     let month: Date
     let transactions: [Transaction]
     let categories: [Category]
-    
+   
     var body: some View {
         DisclosureGroup {
             ForEach(categories, id: \.self) { category in

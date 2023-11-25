@@ -13,7 +13,7 @@ struct TransactionDetailView: View {
     var transaction: Transaction?
     @State private var isEditing = false
     @State private var isDeleting = false
-    
+
     var body: some View {
         Group {
             if let transaction {
@@ -55,6 +55,7 @@ struct TransactionDetailView: View {
                     }
                     Button {
                         isDeleting = true
+                        
                     } label: {
                         Label("Delete \(transaction.name)", systemImage: "trash")
                             .help("Delete transaction")
@@ -66,6 +67,7 @@ struct TransactionDetailView: View {
                 .alert("Delete \(transaction.name)", isPresented: $isDeleting) {
                     Button("Yes, delete \(transaction.name)", role: .destructive) {
                         delete(transaction)
+      
                     }
                 }
                 .padding()

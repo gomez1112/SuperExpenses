@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var selectedScreen: AppScreen?
     @State private var selectedTransaction: Transaction?
     @State private var selectedCagory: Category?
+   
     var body: some View {
         if prefersTabNavigation {
             AppTabView(selectedScreen: $selectedScreen, selectedTransaction: $selectedTransaction, selectedCategory: $selectedCagory)
