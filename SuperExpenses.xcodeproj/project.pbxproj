@@ -22,6 +22,8 @@
 		CC1410EA2B01903800ADA0FD /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1410E92B01903800ADA0FD /* TransactionListView.swift */; };
 		CC1410EC2B01910800ADA0FD /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1410EB2B01910800ADA0FD /* DetailRow.swift */; };
 		CC1410EE2B01990D00ADA0FD /* TransactionEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1410ED2B01990D00ADA0FD /* TransactionEditorViewModel.swift */; };
+		CC1AED2F2B12C5FD00095E8C /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = CC1AED2E2B12C5FD00095E8C /* Configuration.storekit */; };
+		CC1AED302B12C5FD00095E8C /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = CC1AED2E2B12C5FD00095E8C /* Configuration.storekit */; };
 		CC62C5A92B11885D00A711BE /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48602AFFC6EE008FF86B /* TransactionView.swift */; };
 		CC70BF252B00E97A00CB22DA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC70BF242B00E97A00CB22DA /* WidgetKit.framework */; };
 		CC70BF272B00E97A00CB22DA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC70BF262B00E97A00CB22DA /* SwiftUI.framework */; };
@@ -89,6 +91,7 @@
 		CC1410E92B01903800ADA0FD /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
 		CC1410EB2B01910800ADA0FD /* DetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRow.swift; sourceTree = "<group>"; };
 		CC1410ED2B01990D00ADA0FD /* TransactionEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEditorViewModel.swift; sourceTree = "<group>"; };
+		CC1AED2E2B12C5FD00095E8C /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		CC70BF1D2B00DD8500CB22DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CC70BF222B00E97A00CB22DA /* SuperExpenseWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SuperExpenseWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC70BF242B00E97A00CB22DA /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -217,6 +220,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		CC1AED3A2B139B7F00095E8C /* Store */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		CC70BF232B00E97A00CB22DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +272,7 @@
 			children = (
 				CC70BF1D2B00DD8500CB22DA /* Info.plist */,
 				CCCB48322AFFB14E008FF86B /* SuperExpensesApp.swift */,
+				CC1AED2E2B12C5FD00095E8C /* Configuration.storekit */,
 				CC1410E62B018B6800ADA0FD /* ViewModel */,
 				CCCB48432AFFB1A2008FF86B /* Extension */,
 				CCCB48422AFFB19E008FF86B /* Model */,
@@ -298,6 +309,7 @@
 		CCCB48422AFFB19E008FF86B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CC1AED3A2B139B7F00095E8C /* Store */,
 				CCCB48442AFFB1BF008FF86B /* Transaction.swift */,
 				CCCB48562AFFC37B008FF86B /* AppScreen.swift */,
 				CCCB48542AFFBFEF008FF86B /* PreviewSampleData.swift */,
@@ -403,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC70BF2E2B00E97C00CB22DA /* Assets.xcassets in Resources */,
+				CC1AED302B12C5FD00095E8C /* Configuration.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCCB483B2AFFB150008FF86B /* Preview Assets.xcassets in Resources */,
+				CC1AED2F2B12C5FD00095E8C /* Configuration.storekit in Resources */,
 				CCCB48372AFFB150008FF86B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
