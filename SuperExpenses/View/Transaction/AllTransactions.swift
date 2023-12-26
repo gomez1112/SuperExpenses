@@ -13,9 +13,10 @@ struct AllTransactions: View {
     @Environment(\.modelContext) private var context
     @Query private var allTransactions: [Transaction]
     var category: Category?
- 
     var body: some View {
-        NavigationStack {
+        if transactionsByCategory.isEmpty {
+            ContentUnavailableView("No Transactions for \(category?.name ?? "This category")", systemImage: "tray")
+        } else {
             List {
                 ForEach(transactionsByCategory) { transaction in
                     NavigationLink {
@@ -42,4 +43,5 @@ struct AllTransactions: View {
 #Preview {
     AllTransactions()
         .modelContainer(PreviewSampleData.container)
+        .environment(DataModel())
 }

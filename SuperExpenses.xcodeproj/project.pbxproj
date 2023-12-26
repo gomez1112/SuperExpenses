@@ -30,7 +30,7 @@
 		CC70BF2A2B00E97A00CB22DA /* SuperExpenseWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC70BF292B00E97A00CB22DA /* SuperExpenseWidgetBundle.swift */; };
 		CC70BF2C2B00E97A00CB22DA /* SuperExpenseWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC70BF2B2B00E97A00CB22DA /* SuperExpenseWidget.swift */; };
 		CC70BF2E2B00E97C00CB22DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC70BF2D2B00E97C00CB22DA /* Assets.xcassets */; };
-		CC70BF322B00E97C00CB22DA /* SuperExpenseWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CC70BF222B00E97A00CB22DA /* SuperExpenseWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CC70BF322B00E97C00CB22DA /* SuperExpenseWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CC70BF222B00E97A00CB22DA /* SuperExpenseWidgetExtension.appex */; platformFilters = (ios, macos, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CCCB48332AFFB14E008FF86B /* SuperExpensesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48322AFFB14E008FF86B /* SuperExpensesApp.swift */; };
 		CCCB48352AFFB14E008FF86B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48342AFFB14E008FF86B /* ContentView.swift */; };
 		CCCB48372AFFB150008FF86B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCCB48362AFFB150008FF86B /* Assets.xcassets */; };
@@ -60,6 +60,8 @@
 		CCCB48752B00701B008FF86B /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48742B00701B008FF86B /* Optional+Extension.swift */; };
 		CCCB48772B007D68008FF86B /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48762B007D68008FF86B /* CategoryListView.swift */; };
 		CCCB48792B0085D2008FF86B /* AllTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB48782B0085D2008FF86B /* AllTransactions.swift */; };
+		CCEAF55B2B3A3A370067CC49 /* BarMarkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEAF55A2B3A3A370067CC49 /* BarMarkDetailView.swift */; };
+		CCEC18FE2B263879007DE494 /* SuperExpensesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEC18FD2B263879007DE494 /* SuperExpensesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = CC70BF212B00E97A00CB22DA;
 			remoteInfo = SuperExpenseWidgetExtension;
+		};
+		CCEC18FF2B263879007DE494 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCCB48272AFFB14E008FF86B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCCB482E2AFFB14E008FF86B;
+			remoteInfo = SuperExpenses;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -132,6 +141,9 @@
 		CCCB48742B00701B008FF86B /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
 		CCCB48762B007D68008FF86B /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 		CCCB48782B0085D2008FF86B /* AllTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTransactions.swift; sourceTree = "<group>"; };
+		CCEAF55A2B3A3A370067CC49 /* BarMarkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarMarkDetailView.swift; sourceTree = "<group>"; };
+		CCEC18FB2B263879007DE494 /* SuperExpensesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperExpensesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCEC18FD2B263879007DE494 /* SuperExpensesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperExpensesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +157,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CCCB482C2AFFB14E008FF86B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCEC18F82B263879007DE494 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -189,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				CCCB485C2AFFC687008FF86B /* Statistics.swift */,
+				CCEAF55A2B3A3A370067CC49 /* BarMarkDetailView.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -253,6 +273,7 @@
 				CC70BF372B00E98F00CB22DA /* SuperExpenseWidgetExtension.entitlements */,
 				CCCB48312AFFB14E008FF86B /* SuperExpenses */,
 				CC70BF282B00E97A00CB22DA /* SuperExpenseWidget */,
+				CCEC18FC2B263879007DE494 /* SuperExpensesTests */,
 				CC70BF232B00E97A00CB22DA /* Frameworks */,
 				CCCB48302AFFB14E008FF86B /* Products */,
 			);
@@ -263,6 +284,7 @@
 			children = (
 				CCCB482F2AFFB14E008FF86B /* SuperExpenses.app */,
 				CC70BF222B00E97A00CB22DA /* SuperExpenseWidgetExtension.appex */,
+				CCEC18FB2B263879007DE494 /* SuperExpensesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -333,6 +355,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		CCEC18FC2B263879007DE494 /* SuperExpensesTests */ = {
+			isa = PBXGroup;
+			children = (
+				CCEC18FD2B263879007DE494 /* SuperExpensesTests.swift */,
+			);
+			path = SuperExpensesTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -372,6 +402,24 @@
 			productReference = CCCB482F2AFFB14E008FF86B /* SuperExpenses.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CCEC18FA2B263879007DE494 /* SuperExpensesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCEC19032B263879007DE494 /* Build configuration list for PBXNativeTarget "SuperExpensesTests" */;
+			buildPhases = (
+				CCEC18F72B263879007DE494 /* Sources */,
+				CCEC18F82B263879007DE494 /* Frameworks */,
+				CCEC18F92B263879007DE494 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCEC19002B263879007DE494 /* PBXTargetDependency */,
+			);
+			name = SuperExpensesTests;
+			productName = SuperExpensesTests;
+			productReference = CCEC18FB2B263879007DE494 /* SuperExpensesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -380,13 +428,17 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					CC70BF212B00E97A00CB22DA = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
 					CCCB482E2AFFB14E008FF86B = {
 						CreatedOnToolsVersion = 15.0.1;
+					};
+					CCEC18FA2B263879007DE494 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = CCCB482E2AFFB14E008FF86B;
 					};
 				};
 			};
@@ -405,6 +457,7 @@
 			targets = (
 				CCCB482E2AFFB14E008FF86B /* SuperExpenses */,
 				CC70BF212B00E97A00CB22DA /* SuperExpenseWidgetExtension */,
+				CCEC18FA2B263879007DE494 /* SuperExpensesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -426,6 +479,13 @@
 				CCCB483B2AFFB150008FF86B /* Preview Assets.xcassets in Resources */,
 				CC1AED2F2B12C5FD00095E8C /* Configuration.storekit in Resources */,
 				CCCB48372AFFB150008FF86B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCEC18F92B263879007DE494 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +531,7 @@
 				CC1410EC2B01910800ADA0FD /* DetailRow.swift in Sources */,
 				CCCB486D2AFFD872008FF86B /* AppContentColumn.swift in Sources */,
 				CCCB48352AFFB14E008FF86B /* ContentView.swift in Sources */,
+				CCEAF55B2B3A3A370067CC49 /* BarMarkDetailView.swift in Sources */,
 				CCCB485F2AFFC690008FF86B /* Profile.swift in Sources */,
 				CCCB48332AFFB14E008FF86B /* SuperExpensesApp.swift in Sources */,
 				CC1410EE2B01990D00ADA0FD /* TransactionEditorViewModel.swift in Sources */,
@@ -491,13 +552,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CCEC18F72B263879007DE494 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCEC18FE2B263879007DE494 /* SuperExpensesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		CC70BF312B00E97C00CB22DA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				macos,
+			);
 			target = CC70BF212B00E97A00CB22DA /* SuperExpenseWidgetExtension */;
 			targetProxy = CC70BF302B00E97C00CB22DA /* PBXContainerItemProxy */;
+		};
+		CCEC19002B263879007DE494 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCCB482E2AFFB14E008FF86B /* SuperExpenses */;
+			targetProxy = CCEC18FF2B263879007DE494 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -597,6 +675,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -658,6 +737,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -686,6 +766,7 @@
 				CODE_SIGN_ENTITLEMENTS = SuperExpenses/SuperExpenses.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SuperExpenses/Preview Content\"";
 				DEVELOPMENT_TEAM = 88QL9VPLMY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -710,10 +791,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.transfinite.SuperExpenses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -726,6 +808,7 @@
 				CODE_SIGN_ENTITLEMENTS = SuperExpenses/SuperExpenses.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SuperExpenses/Preview Content\"";
 				DEVELOPMENT_TEAM = 88QL9VPLMY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -750,10 +833,52 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.transfinite.SuperExpenses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		CCEC19012B263879007DE494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88QL9VPLMY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.transfinite.SuperExpensesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperExpenses.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SuperExpenses";
+			};
+			name = Debug;
+		};
+		CCEC19022B263879007DE494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88QL9VPLMY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.transfinite.SuperExpensesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperExpenses.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SuperExpenses";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -783,6 +908,15 @@
 			buildConfigurations = (
 				CCCB483F2AFFB150008FF86B /* Debug */,
 				CCCB48402AFFB150008FF86B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCEC19032B263879007DE494 /* Build configuration list for PBXNativeTarget "SuperExpensesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCEC19012B263879007DE494 /* Debug */,
+				CCEC19022B263879007DE494 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

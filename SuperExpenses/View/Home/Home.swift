@@ -18,8 +18,8 @@ struct Home: View {
         NavigationStack {
             List {
                 HStack {
-                    StatisticsCard(title: "Total Income", value: model.totalIncome(transactions: transactions), color: .green)
-                    StatisticsCard(title: "Total Expenses", value: model.totalExpenses(transactions: transactions), color: .red)
+                    StatisticsCard(title: "Total Income", value: model.totalAmount(for: .income, in: transactions), color: .green)
+                    StatisticsCard(title: "Total Expenses", value: model.totalAmount(for: .expense, in: transactions), color: .red)
                 }
                 Text("Recent Transactions")
                     .font(.title2)

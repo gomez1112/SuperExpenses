@@ -29,4 +29,5 @@ struct AppContentColumn: View {
 
 #Preview {
     AppContentColumn(selectedScreen: .constant(.transactions), selectedTransaction: .constant(nil), selectedCategory: .constant(nil))
+        .modelContainer(PreviewSampleData.container)
 }

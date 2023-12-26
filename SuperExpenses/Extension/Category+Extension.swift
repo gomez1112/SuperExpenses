@@ -20,7 +20,14 @@ extension Category {
     static var preview: [Category] {
         [income, bill, enterntaiment, groceries, education, vehicle]
     }
-    
+    static func insertCategory(context: ModelContext) {
+        context.insert(income)
+        context.insert(bill)
+        context.insert(enterntaiment)
+        context.insert(groceries)
+        context.insert(education)
+        context.insert(vehicle)
+    }
     static func insertSampleData(context: ModelContext) {
         context.insert(income)
         context.insert(bill)

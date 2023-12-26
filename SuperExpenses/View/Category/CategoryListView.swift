@@ -15,23 +15,27 @@ struct CategoryListView: View {
     @Binding var selectedCategory: Category?
     
     var body: some View {
-        NavigationStack {
-            List(selection: $selectedCategory) {
-                ForEach(categories) { category in
-                    NavigationLink {
-                        AllTransactions(category: category)
-                    } label: {
-                        Text(category.name.capitalized)
+        if categories.isEmpty {
+            ContentUnavailableView("No Transactions", image: "tray")
+        } else {
+            NavigationStack {
+                List(selection: $selectedCategory) {
+                    ForEach(categories) { category in
+                        NavigationLink {
+                            AllTransactions(category: category)
+                        } label: {
+                            Text(category.name.capitalized)
+                        }
+                    }
+                    .onDelete { indexSet in
+                        model.removeItems(items: categories, at: indexSet) { category in
+                            context.delete(category)
+                        }
                     }
                 }
-                .onDelete { indexSet in
-                    model.removeItems(items: categories, at: indexSet) { category in
-                        context.delete(category)
-                    }
-                }
+                .navigationTitle("Categories")
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationTitle("Categories")
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

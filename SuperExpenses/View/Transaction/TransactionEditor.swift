@@ -62,6 +62,11 @@ struct TransactionEditor: View {
                         }
                     }
                 }
+                ToolbarItem {
+                    Button("Insert Category") {
+                        Category.insertCategory(context: context)
+                    }
+                }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel", role: .cancel) {
                         dismiss()

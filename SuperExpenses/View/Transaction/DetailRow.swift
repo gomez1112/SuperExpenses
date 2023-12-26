@@ -21,9 +21,9 @@ struct DetailRow: View {
         self.label = label
         self.value = DateFormatter.localizedString(from: value, dateStyle: style, timeStyle: .none)
     }
-    
     var body: some View {
         HStack {
+            
             Text(label)
                 .font(.headline)
                 .foregroundColor(.secondary)
@@ -36,5 +36,5 @@ struct DetailRow: View {
 }
 
 #Preview {
-    DetailRow(label: "", value: "")
+    DetailRow(label: "book", value: "house")
 }

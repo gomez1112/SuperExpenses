@@ -7,7 +7,9 @@
 
 import SwiftData
 import SwiftUI
+#if os(iOS) || os(macOS)
 import WidgetKit
+#endif
 
 struct TransactionsView: View {
     @Binding var selectedTransaction: Transaction?

@@ -12,11 +12,8 @@ import SwiftData
 
 @Observable
 final class DataModel {
-    func totalIncome(transactions: [Transaction]) -> Double {
-        transactions.filter { $0.kind == .income }.map(\.amount).reduce(0,+)
-    }
-    func totalExpenses(transactions: [Transaction]) -> Double {
-        transactions.filter { $0.kind == .expense }.map(\.amount).reduce(0,+)
+    func totalAmount(for kind: Transaction.Kind, in transactions: [Transaction]) -> Double {
+        transactions.filter { $0.kind == kind }.map(\.amount).reduce(0, +)
     }
     func removeItems<T>(items: [T], at indexSet: IndexSet, deleteAction: (T) -> Void) {
         indexSet.forEach { index in

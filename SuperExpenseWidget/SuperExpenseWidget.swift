@@ -27,9 +27,9 @@ struct Provider: TimelineProvider {
     @MainActor
     private var getTransactions: [Transaction] {
         guard let container = try? ModelContainer(for: Category.self, Transaction.self) else { return [] }
-        let threeDaysAgo = Calendar.current.date(byAdding: .day, value: -3, to: Date())!
+        let sevenDaysAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date().addingTimeInterval(60*24*60))!
         var descriptor = FetchDescriptor<Transaction>(predicate: #Predicate { transaction in
-            transaction.date >= threeDaysAgo
+            transaction.date >= sevenDaysAgo
         })
         descriptor.fetchLimit = 3
         let transactions = try? container.mainContext.fetch(descriptor)

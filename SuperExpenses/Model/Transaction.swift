@@ -10,7 +10,7 @@ import SwiftData
 
 
 @Model
-final class Transaction {
+final class Transaction: Identifiable {
     var name = ""
     var amount: Double = 0.0
     var kind: Kind = Kind.expense

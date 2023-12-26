@@ -7,7 +7,9 @@
 
 import SwiftData
 import SwiftUI
+#if os(iOS) || os(macOS)
 import WidgetKit
+#endif
 
 struct TransactionListView: View {
     var category: Category?
@@ -59,7 +61,9 @@ struct TransactionListView: View {
         var body: some View {
             Button {
                 isActive = true
+                #if os(iOS) || os(macOS)
                 WidgetCenter.shared.reloadAllTimelines()
+                #endif
             } label: {
                 Label("Add a transaction", systemImage: "plus")
                     .help("Add a transaction")
