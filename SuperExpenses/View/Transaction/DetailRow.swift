@@ -23,7 +23,6 @@ struct DetailRow: View {
     }
     var body: some View {
         HStack {
-            
             Text(label)
                 .font(.headline)
                 .foregroundColor(.secondary)

@@ -9,35 +9,6 @@ import Charts
 import SwiftData
 import SwiftUI
 
-enum ChartType: Identifiable {
-    case bar
-    case sector
-    case line
-    var id: Self { self }
-    
-    @ViewBuilder
-    func chartView(transactions: [Transaction]) -> some View {
-        switch self {
-            case .bar:
-                BarMarkView(transactions: transactions)
-            case .sector:
-                SectorMarkView(transactions: transactions)
-            case .line:
-                LineMarkView(transactions: transactions)
-        }
-    }
-    @ViewBuilder
-    func detailView() -> some View {
-        switch self {
-            case .bar:
-                BarMarkDetailView()
-            case .sector:
-                SectorMarkDetailView()
-            case .line:
-                LineMarkDetailView()
-        }
-    }
-}
 struct Statistics: View {
     @Query private var transactions: [Transaction]
     let chartTypes: [ChartType] = [.bar, .sector, .line]
@@ -105,6 +76,35 @@ struct LineMarkView: View {
             ForEach(transactions) { transaction in
                 LineMark(x: .value("Date", transaction.date), y: .value("Amount", transaction.amount))
             }
+        }
+    }
+}
+enum ChartType: Identifiable {
+    case bar
+    case sector
+    case line
+    var id: Self { self }
+    
+    @ViewBuilder
+    func chartView(transactions: [Transaction]) -> some View {
+        switch self {
+            case .bar:
+                BarMarkView(transactions: transactions)
+            case .sector:
+                SectorMarkView(transactions: transactions)
+            case .line:
+                LineMarkView(transactions: transactions)
+        }
+    }
+    @ViewBuilder
+    func detailView() -> some View {
+        switch self {
+            case .bar:
+                BarMarkDetailView()
+            case .sector:
+                SectorMarkDetailView()
+            case .line:
+                LineMarkDetailView()
         }
     }
 }
